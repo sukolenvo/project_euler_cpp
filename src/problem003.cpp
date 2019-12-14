@@ -2,6 +2,6 @@
 #include "lib.h"
 
 int main() {
-    std::cout << *(prime_factors(600851475143).end() - 1);
+    std::cout << prime_factors<long long>(600851475143).back();
     return 0;
 }
