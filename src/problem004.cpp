@@ -1,24 +1,30 @@
 #include <iostream>
-#include "lib.h"
+#include "common.h"
 
-bool is_palindrom(const std::vector<char>& digits) {
-    auto desc = (digits.rbegin()); // todo it would be nice to cast this to iterator and put as part for init statement
-    for (auto asc = digits.begin(); asc != digits.end();) {
-        if (*(asc--) != *(desc++)) {
-            return false;
-        }
-    }
-    return true;
-}
-
-int main() {
-    for (long i = 999; i >= 100; --i) {
-        for (long j = i; j >= 100; --j) {
-            if (is_palindrom(to_digits<long>(i * j))) {
-                std::cout << i * j;
-                return 0;
+namespace problem004 {
+    bool is_palindrom(const std::vector<char> &digits) {
+        auto desc = (digits.rbegin()); // todo it would be nice to cast this to iterator and put as part for init statement
+        for (auto asc = digits.begin(); asc != digits.end();) {
+            if (*(asc++) != *(desc++)) {
+                return false;
             }
         }
+        return true;
     }
-    return 1;
+
+    long main() {
+        long candidate = -1;
+        // guess that to build largest palindrom both numbers should be over 900
+        for (long i = 900; i < 1000; ++i) {
+            for (long j = i; j < 1000; j++) {
+                if (is_palindrom(common::to_digits<long>(i * j))) {
+                    if (candidate < i * j) {
+                        candidate = i * j;
+                    }
+                }
+            }
+        }
+        std::cout << candidate;
+        return candidate;
+    }
 }
