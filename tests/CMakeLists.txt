@@ -5,6 +5,6 @@ add_executable(test_runner
         src/t_problem002.cpp
         src/t_problem003.cpp
         src/t_problem004.cpp
-        src/t_common.cpp)
+        src/t_common.cpp src/t_problem005.cpp)
 target_link_libraries(test_runner project_euler_cpp gtest gtest_main)
 gtest_add_tests(TARGET test_runner)
