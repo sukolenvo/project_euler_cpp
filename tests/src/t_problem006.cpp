@@ -10,5 +10,5 @@ TEST(problem006, task_example) {
 }
 
 TEST(problem006, run) {
-    ASSERT_EQ(-1, problem006::main(100)) << "comparing with submitted answer";
+    ASSERT_EQ(25164150, problem006::main(100)) << "comparing with submitted answer";
 }
