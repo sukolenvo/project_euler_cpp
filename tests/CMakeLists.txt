@@ -10,6 +10,7 @@ add_executable(test_runner
         src/t_problem006.cpp
         src/t_problem007.cpp
         src/t_problem008.cpp
+        src/t_problem009.cpp
         )
 target_link_libraries(test_runner project_euler_cpp gtest gtest_main)
 gtest_add_tests(TARGET test_runner)
