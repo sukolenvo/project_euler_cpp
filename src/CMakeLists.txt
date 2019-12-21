@@ -10,6 +10,7 @@ add_library(project_euler_cpp STATIC common.h
         problem008.cpp
         problem009.cpp
         problem010.cpp
+        problem011.cpp
         )
 
 set_target_properties(project_euler_cpp PROPERTIES LINKER_LANGUAGE CXX)
